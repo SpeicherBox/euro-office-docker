@@ -11,9 +11,9 @@ services:
       - JWT_ENABLED=${EUROOFFICE_JWT_ENABLED:-true}
       - JWT_SECRET=${EUROOFFICE_JWT_SECRET:?Variable is not set or empty}
     volumes:
-      - /opt/onlyoffice/logs:/var/log/onlyoffice
-      - /opt/onlyoffice/data:/var/www/onlyoffice/Data
-      - /opt/onlyoffice/lib:/var/lib/onlyoffice
+      - /opt/eurooffice/logs:/var/log/onlyoffice
+      - /opt/eurooffice/data:/var/www/onlyoffice/Data
+      - /opt/eurooffice/lib:/var/lib/onlyoffice
     labels:
       caddy: ${SERVER_HOSTNAME}:${EUROOFFICE_PORT:-6233}
       caddy.reverse_proxy: "{{upstreams 80}}"
