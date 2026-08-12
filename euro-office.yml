@@ -3,9 +3,8 @@ services:
   caddy:
     ports:
       - ${EUROOFFICE_PORT:-6233}:${EUROOFFICE_PORT:-6233}
-
   eurooffice:
-    image: ${EUROOFFICE_IMAGE:-onlyoffice/documentserver:9.4.0.1}
+    image: ghcr.io/euro-office/documentserver:latest
     restart: unless-stopped
     container_name: eurooffice
     environment:
